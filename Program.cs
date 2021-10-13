@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 using YOLOv4MLNet;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Main
 {
@@ -29,11 +31,10 @@ namespace Main
             CancellationToken cancellationToken = cancellationTokenSource.Token;
 
             Console.CancelKeyPress += Handler;
-        
-            foreach (FileInfo image in images)
-            {
-                await recognition.StartRecognize(view.Model, image.FullName, cancellationToken);
-            }
+
+            IEnumerable<FileInfo> fileInfo = new List<FileInfo>(directoryInfo.GetFiles());
+            var tasks = fileInfo.Select(fi => recognition.AsyncStartRecognize(view.Model, fi.FullName, cancellationToken));
+            await Task.WhenAll(tasks);
 
             Console.WriteLine("DONE.");
         }
