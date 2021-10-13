@@ -64,7 +64,7 @@ namespace YOLOv4MLNet
             predictionEngine = mlContext.Model.CreatePredictionEngine<YoloV4BitmapData, YoloV4Prediction>(model);
         }
 
-        public async Task<bool> StartRecognize(Model viewmodel, string pathToImage, CancellationToken cancellationToken)
+        public async Task<bool> AsyncStartRecognize(Model viewmodel, string pathToImage, CancellationToken cancellationToken)
         {
             return await Task<bool>.Factory.StartNew(() =>
             {

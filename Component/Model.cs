@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace YOLOv4MLNet
 {
@@ -52,11 +53,11 @@ namespace YOLOv4MLNet
             }
         }
 
-        private void OnPropertyChanged()
+        private void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs("ImgBag"));
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
             }
         }
     }
