@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI", "GUI.csproj", "{AA408475-F458-48DA-A58A-C2F4534AC975}"
+	ProjectSection(ProjectDependencies) = postProject
+		{034A9297-8976-4D45-BFAE-A7F4A62E5BAA} = {034A9297-8976-4D45-BFAE-A7F4A62E5BAA}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Component", "..\PerceptionComponent\Component.csproj", "{034A9297-8976-4D45-BFAE-A7F4A62E5BAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA408475-F458-48DA-A58A-C2F4534AC975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA408475-F458-48DA-A58A-C2F4534AC975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA408475-F458-48DA-A58A-C2F4534AC975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA408475-F458-48DA-A58A-C2F4534AC975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{034A9297-8976-4D45-BFAE-A7F4A62E5BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034A9297-8976-4D45-BFAE-A7F4A62E5BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034A9297-8976-4D45-BFAE-A7F4A62E5BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034A9297-8976-4D45-BFAE-A7F4A62E5BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D87C68A-E27B-4C44-AD0B-7A633B7C97B8}
+	EndGlobalSection
+EndGlobal

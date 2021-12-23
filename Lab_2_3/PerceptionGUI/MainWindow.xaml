@@ -1,0 +1,92 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI" xmlns:perceptioncomponent="clr-namespace:PerceptionComponent;assembly=PerceptionComponent"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="375*"/>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="59*"/>
+            </Grid.RowDefinitions>
+            <Grid Margin="0,0,0,91">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+            <Button Content="Старт" Click="StartPerceptionButtonClick" RenderTransformOrigin="0.495,0.547" Margin="10,259,10,80"/>
+            <Button x:Name="StopPerceptionButton" Content="Стоп" IsEnabled="False" Click="StopPerceptionButtonClick" Margin="10,319,10,21" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <ListBox x:Name="ClassCounts" ItemsSource="{Binding ClassCount}" Margin="10,10,10,250" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="16*"/>
+            </Grid.RowDefinitions>
+            <ListView x:Name="ClassImages" Margin="10,10,10,150">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Height="200" Width="200"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+
+            </Grid.RowDefinitions>
+            <ListView x:Name="ListViewImagesInProcess" ItemsSource="{Binding ImagesInProcess}" Margin="10,10,10,150">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Height="100" Width="100"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBox x:Name="FolderPathTextBox" Text="Ничего не выбрано" IsEnabled="False" Margin="10,299,10,95" TextChanged="FolderPathTextBox_TextChanged"/>
+            <Button Content="Выбор директории" Click="ChooseFolderButtonClick" Margin="10,349,10,25">
+                <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <Button Content="Очистить БД" Click="ClearDB" Margin="19,24,19,0" Grid.RowSpan="2"/>
+            <ListBox Grid.Row="2" x:Name="ImagesDBListBox" Margin="19,10,19,22"/>
+            <ListBox Grid.Row="3" x:Name="RectanglesDBListBox" Margin="18,28,20,36"/>
+        </Grid>
+    </Grid>
+</Window>
