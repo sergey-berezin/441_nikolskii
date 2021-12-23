@@ -2,7 +2,7 @@
 using Microsoft.ML.Transforms.Image;
 using System.Drawing;
 
-namespace YOLOv4MLNet.DataStructures
+namespace YOLOv4MLNet.Yolo
 {
     public class YoloV4BitmapData
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace YOLOv4MLNet.DataStructures
+namespace YOLOv4MLNet.Yolo
 {
     public class YoloV4Prediction
     {
